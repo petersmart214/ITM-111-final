@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: mysql_api
+Version: 0.0.1
+Requires-Dist: uvicorn
+Requires-Dist: fastapi
+Dynamic: requires-dist

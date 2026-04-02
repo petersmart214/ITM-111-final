@@ -1,0 +1,2 @@
+[console_scripts]
+startup_api = final_db_start:startup
