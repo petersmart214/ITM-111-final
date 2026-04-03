@@ -1,3 +1,35 @@
-div.error_container {
-    display: none;
+:root {
+    --primary-color: #447a9c;
+    --secondary-color: #7196ad ;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+.main_container {
+    margin: 5em;
+    display: grid;
+    grid-template-columns: min-content 50%;
+    justify-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.buttons {
+    justify-self: right;
+    
+}
+
+.button {
+    background-color: var(--secondary-color);
+}
+
+.iframe_div {
+    width: 100%;
+}
+
+#query_iframe {
+    width: 100%;
+    background-color: var(--secondary-color);
 }

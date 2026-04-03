@@ -10,10 +10,11 @@ function change_query(new_query, new_message) {
     iframe_elem.src = `${iframe_elem.getAttribute("data-src")}/${new_query}`;
 }
 
-
 iframe_elem.addEventListener("load", () => {
   document.getElementById("message_box").innerHTML = message;
-  console.log(iframe_elem.contentDocument)
-  document.getElementById("error_box").textContent = iframe_elem.document.getElementById("error_container").textContent
 });
+
+
+
+
 

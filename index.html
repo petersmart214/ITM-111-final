@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div>
-        <div>
-            <button class="button_test" onclick="change_query('test', 'Test Button Message')">Get Results</button>
+    <div class="main_container">
+        <div class="buttons">
+            <button class="button" onclick="change_query('region', 'This Query pulls the average duration verses average energy pull grouped by region.')">Query 1</button>
+            <button class="button" onclick="change_query('types', 'This Query finds the average duration by charger type. (DCFC is DC fast charger and L2 is Level 2)')">Query 2</button>
         </div>
         <div class="iframe_div">
             <iframe id="query_iframe" src="http://127.0.0.1:8000" data-src="http://127.0.0.1:8000"></iframe>
