@@ -35,6 +35,16 @@ async def read_test():
     html_content = enclose_xsv_in_html(convert_xsv_into_html(*run_batched_query(app.state.base_user, app.state.base_password, "use ev_charger; select charger.charger_type, round(avg(session.charge_duration), 3) as `Average Charge Duration`, round(avg(session.total_duration), 3) as `Average Session Duration` from region right join (charger right join session on charger.charger_id = session.charger_id) on charger.region_id = region.region_id group by charger.charger_type order by `Average Charge Duration`;")), 3)
     return HTMLResponse(content=html_content)
 
+@app.get("/histogramdcfc", response_class=HTMLResponse)
+async def read_test():
+    html_content = enclose_xsv_in_html(convert_xsv_into_html(*run_batched_query(app.state.base_user, app.state.base_password, "use ev_charger; select HOUR(session.start_datetime) as `Start Time`, count(session.session_id) as `DCFC Start Counts` from charger join session on session.charger_id = charger.charger_id where charger.charger_type = \"DCFC\" group by `Start Time` order by `Start Time`;")), 2)
+    return HTMLResponse(content=html_content)
+
+@app.get("/venue", response_class=HTMLResponse)
+async def read_test():
+    html_content = enclose_xsv_in_html(convert_xsv_into_html(*run_batched_query(app.state.base_user, app.state.base_password, "use ev_charger; SELECT venue, count(charger_id) as `c` FROM ev_charger.charger group by venue order by `c`;")), 2)
+    return HTMLResponse(content=html_content)
+
 def enclose_xsv_in_html(html_to_enclose, columns=1):
     return f"""
     <!DOCTYPE html>

@@ -1,6 +1,10 @@
 :root {
     --primary-color: #447a9c;
-    --secondary-color: #7196ad ;
+    --secondary-color: #7196ad;
+    --primary-text-color: #000000;
+    --secondary-text-color: #ffffff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--secondary-text-color);
 }
 
 body {
@@ -9,6 +13,7 @@ body {
 
 .main_container {
     margin: 5em;
+    margin-bottom: 10px;
     display: grid;
     grid-template-columns: min-content 50%;
     justify-items: center;
@@ -32,4 +37,8 @@ body {
 #query_iframe {
     width: 100%;
     background-color: var(--secondary-color);
+}
+
+#message_box {
+    text-align: center;
 }

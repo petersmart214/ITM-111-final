@@ -9,6 +9,8 @@
         <div class="buttons">
             <button class="button" onclick="change_query('region', 'This Query pulls the average duration verses average energy pull grouped by region.')">Query 1</button>
             <button class="button" onclick="change_query('types', 'This Query finds the average duration by charger type. (DCFC is DC fast charger and L2 is Level 2)')">Query 2</button>
+            <button class="button" onclick="change_query('histogramdcfc', 'Histogram of sessions that use a DCFC charger')">Query 3</button>
+            <button class="button" onclick="change_query('venue', 'This is used to show counts of charger venues')">Query 4</button>
         </div>
         <div class="iframe_div">
             <iframe id="query_iframe" src="http://127.0.0.1:8000" data-src="http://127.0.0.1:8000"></iframe>
@@ -17,9 +19,6 @@
     <div>
         <div id="message_box">
             Hit a button to run a query! Some may take a significant amount of time!
-        </div>
-        <div id="error_box">
-
         </div>
     </div>
 
